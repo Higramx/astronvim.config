@@ -23,6 +23,10 @@ return {
             "kristijanhusak/vim-dadbod-completion",
             "kristijanhusak/vim-dadbod-ui",
         },
+        config = function()
+            require("vim_dadbod").setup {
+            }
+        end,
         cmd = "DBUI",
     },
     --[[
@@ -71,10 +75,7 @@ return {
             vim.api.nvim_command "colorscheme vscode"
         end,
     },
-    --{"xiyaowong/nvim-transparent", name = "transparent"},
-
     { "jim-fx/sudoku.nvim", cmd = "Sudoku", config = "user.config.sudoku" },
-
     {
         "catppuccin/nvim",
         lazy = false,

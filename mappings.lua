@@ -1,4 +1,4 @@
-local utils = require "astronvim.utils"
+-- local utils = require "astronvim.utils"
 -- local is_available = utils.is_available
 -- local ui = require "astronvim.utils.ui"
 
@@ -28,8 +28,7 @@ Maps = {
         ["<leader>x"] = { "<nop>" },
         ["<leader>z"] = { "o<Esc>" },
         ["<leader>Z"] = { "O<Esc>" },
-        ["<leader>p"] = { '"_dP' },
-        -- ["<leader>m"] = { '"_dP' },
+        ["<leader>P"] = { '"_dP' },
         -- while ufo-ing, stay centered with cursor
         ["J"] = { "mzJ`z" },
         ["C-d"] = { "<C-d>zz" },
@@ -62,20 +61,18 @@ Maps = {
         ["<C-b>"] = { "<C-v>" },
         ["<C-v>"] = { "<C-o>p" },
         -- ["<C-H>"] = { "<C-o>db" },
-
     },
     v = {
-        ["<leader>p"] = { '"_dP' },
+        ["<leader>P"] = { '"_dP' },
         ["J"] = { ":m '>+1<CR>gv=gv" },
         ["K"] = { ":m '<-2<CR>gv=gv" },
     },
     x = {
-        ["<leader>p"] = { '"_dP' },
+        ["<leader>P"] = { '"_dP' },
         -- ["C-V"] = { function() vim.cmd.put() end },
     },
 }
 -- Run things in terminal
-
 
 
 return Maps

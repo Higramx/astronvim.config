@@ -19,6 +19,7 @@ local thing = {
         mmp = 50000,
     },
     g = {
+        -- db_ui_disable_mappings = 1,
         netrw_browsex_viewer = "chrome",
         -- dbs = {('testo'): {'mariadb://root:test@localhost:1306'},},
     },
