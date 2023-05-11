@@ -6,12 +6,12 @@ return function()
         },
         color_overrides = {
             mocha = {
-                rosewater = "#EA6962",
-                flamingo = "#EA6962",
+                rosewater = "#bA89a2",
+                flamingo = "#bA89a2",
                 pink = "#D3869B",
                 mauve = "#D3869B",
-                red = "#EA6962",
-                maroon = "#EA6962",
+                red = "#bA89a2",
+                maroon = "#bA89a2",
                 peach = "#BD6F3E",
                 yellow = "#D8A657",
                 green = "#A9B665",
