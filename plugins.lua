@@ -8,6 +8,23 @@ return {
             require("copilot").setup({})
         end,
     },
+    {
+        "folke/tokyonight.nvim",
+        name = "tokyonight",
+        opts = {
+            highlight = {
+                Normal = { guibg = "none" },
+                NormalNC = { guibg = "none" },
+                NeotreeNormal = { guibg = "none" },
+            },
+        },
+        config = require "user.config.tokyonight",
+    },
+    {
+        'nyngwang/nvimgelion',
+        name = "nvimgelion",
+        config = require "user.config.nvimgelion",
+    },
     -- "github/copilot.vim",
     {
         "daschw/leaf.nvim",

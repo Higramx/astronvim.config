@@ -25,6 +25,10 @@ local runterm = {
 -- scroll move visualmode marked items
 Maps = {
     n = {
+        ["|"] = { "<nop>" },
+        ["\\"] = { "<nop>" },
+        ["<leader>|"] = { "<cmd>vsplit<cr>", desc = "Vertical Split" },
+        ["<leader>\\"] = { "<cmd>split<cr>", desc = "Horizontal Split" },
         ["<leader>x"] = { "<nop>" },
         ["<leader>z"] = { "o<Esc>" },
         ["<leader>Z"] = { "O<Esc>" },
