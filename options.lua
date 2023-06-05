@@ -1,25 +1,25 @@
 local thing = {
     opt = {
-        list = true,
-        cpoptions = "aABceFs_I",
-        listchars = "tab:  ,eol:󱞤",
+        list          = true,
+        cpoptions     = "aABceFs_I",
+        listchars     = "tab:  ,eol:󱞤",
         --
-        shiftwidth = 4,     -- Number of space inserted for indentation
+        shiftwidth    = 4,  -- Number of space inserted for indentation
         sidescrolloff = 16, -- Number of columns to keep at the sides of the cursor
-        hlsearch = false,
-        incsearch = true,
-        nu = true,
-        shell = 'pwsh',
-        shellcmdflag =
-        "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;",
-        shellredir = "-RedirectStandardOutput %s -NoNewWindow -Wait",
-        shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode",
-        shellquote = "",
-        shellxquote = "",
-        mmp = 50000,
+        hlsearch      = false,
+        incsearch     = true,
+        nu            = true,
+        shell         = 'pwsh',
+        shellcmdflag  =
+        "-NoLogo -ExecutionPolicy RemoteSigned -Command ",
+        -- "-NoLogo -NonInteractive -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.UTF8Encoding]::new();$PSDefaultParameterValues[''Out-File:Encoding'']=''utf8'';",
+        shellredir    = '2>&1 | %%{ "$_" } | Out-File %s; exit $LastExitCode',
+        shellpipe     = '2>&1 | %%{ "$_" } | Tee-Object %s; exit $LastExitCode',
+        shellquote    = "",
+        shellxquote   = "",
+        mmp           = 50000,
     },
     g = {
-        -- db_ui_disable_mappings = 1,
         netrw_browsex_viewer = "chrome",
         -- dbs = {('testo'): {'mariadb://root:test@localhost:1306'},},
     },
