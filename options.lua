@@ -2,8 +2,7 @@ local thing = {
     opt = {
         list          = true,
         cpoptions     = "aABceFs_I",
-        listchars     = "tab:  ,eol:󱞤",
-        --
+        listchars     = "tab:  ,eol:󰘌",
         shiftwidth    = 4,  -- Number of space inserted for indentation
         sidescrolloff = 16, -- Number of columns to keep at the sides of the cursor
         hlsearch      = false,

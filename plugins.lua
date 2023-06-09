@@ -1,6 +1,27 @@
 return {
     { "lervag/vimtex" },
     {
+        "nvim-neorg/neorg",
+        name = "neorg",
+        cmd = "Neorg",
+        run = ":Neorg sync-parsers", -- This is the important bit!
+        config = function()
+            require("neorg").setup {
+                load = {
+                    ["core.defaults"] = {},
+                    ["core.dirman"] = {
+                        config = {
+                            workspaces = {
+                                uni = "/docs/Uni",
+                                notes = "/docs/notes",
+                            }
+                        }
+                    }
+                }
+            }
+        end,
+    },
+    {
         "zbirenbaum/copilot.lua",
         cmd = "Copilot",
         event = "InsertEnter",
