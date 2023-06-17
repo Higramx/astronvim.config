@@ -1,23 +1,42 @@
 return {
     { "lervag/vimtex" },
+    -- {
+    --     "sourcegraph/sg.nvim", -- requires fiddling or linux (mlua cargo pack at least)
+    --     build = "cargo build --workspace",
+    --     dependencies = { "nvim-lua/plenary.nvim" },
+    -- },
+    {
+        "wfxr/minimap.vim",
+        name = "minimap.vim",
+        cmd = "Minimap",
+    },
+    {
+        "ThePrimeagen/harpoon",
+        name = "harpoon",
+        config = function()
+            require("harpoon").setup({})
+        end,
+    },
     {
         "nvim-neorg/neorg",
         name = "neorg",
         cmd = "Neorg",
-        run = ":Neorg sync-parsers", -- This is the important bit!
+        build = ":Neorg sync-parsers",
+        dependencies = { "nvim-lua/plenary.nvim" },
         config = function()
             require("neorg").setup {
                 load = {
-                    ["core.defaults"] = {},
-                    ["core.dirman"] = {
+                    ["core.defaults"] = {},  -- Loads default behaviour
+                    ["core.concealer"] = {}, -- Adds pretty icons to your documents
+                    ["core.dirman"] = {      -- Manages Neorg workspaces
                         config = {
                             workspaces = {
-                                uni = "/docs/Uni",
                                 notes = "/docs/notes",
-                            }
-                        }
-                    }
-                }
+                                uni = "/docs/Uni",
+                            },
+                        },
+                    },
+                },
             }
         end,
     },
@@ -67,41 +86,17 @@ return {
         end,
         cmd = "DBUI",
     },
-    --[[
-    {
-        "petertriho/nvim-scrollbar",
-        event = "VeryLazy",
-        config = function()
-            require("scrollbar").setup {
-                handlers = {
-                    cursor = true,
-                    diagnostic = true,
-                    gitsigns = true, -- Requires gitsigns
-                    handle = true,
-                    search = false, -- Requires hlslens
-                },
-                excluded_filetypes = {
-                    "prompt",
-                    "TelescopePrompt",
-                    "noice",
-                    "NvimTree",
-                    "neo-tree",
-                },
-            }
-        end,
-    },
-    --]]
     {
         "jose-elias-alvarez/null-ls.nvim",
         name = "null-ls",
         --[[ function() require("null-ls").setup {} end, ]]
     },
     { "rose-pine/neovim", name = "rose-pine" },
-    {
-        "LhKipp/nvim-nu",
-        name = "nvim-nu",
-        --[[ function() require("nu").setup {} end ]]
-    },
+    -- {
+    --     "LhKipp/nvim-nu",
+    --     name = "nvim-nu",
+    --     --[[ function() require("nu").setup {} end ]]
+    -- },
     {
         "Mofiqul/vscode.nvim",
         name = "vscode",
