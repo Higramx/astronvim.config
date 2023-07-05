@@ -46,6 +46,8 @@ function Transparent()
   end
 end
 
+require("lspconfig").kotlin_language_server.setup {}
+
 vim.api.nvim_create_user_command("Transparent", function() Transparent() end, { nargs = 0 })
 
 vim.api.nvim_create_user_command("Vscode", function() vim.api.nvim_command "colorscheme vscode" end, { nargs = 0 })

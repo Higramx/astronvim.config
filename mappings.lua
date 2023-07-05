@@ -17,6 +17,10 @@ local runterm = {
             vim.cmd.TermExec 'cmd="cd %:p:h && python %:t"'
         elseif vim.bo.filetype == "rust" then
             vim.cmd.TermExec 'cmd="cd %:p:h && rustc %:t && ./%:t:r"'
+        elseif vim.bo.filetype == "java" then
+            vim.cmd.TermExec 'cmd="java %"'
+        elseif vim.bo.filetype == "kotlin" then
+            vim.cmd.TermExec 'cmd="kscript %"'
         end
     end,
     desc = "Run file",
