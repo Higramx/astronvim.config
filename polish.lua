@@ -1,6 +1,8 @@
--- require("notify").setup() {
+vim.api.nvim_set_hl(0, 'NotifyBackground', { bg = "#000000" })
+-- require("notify").setup({
 --   background_color = "#000000",
--- }
+-- })
+
 function Transparent()
   local groups = { -- table: default groups
     "Normal",
@@ -47,6 +49,8 @@ function Transparent()
 end
 
 require("lspconfig").kotlin_language_server.setup {}
+
+require "nvim-treesitter.install".compilers = { 'zig' }
 
 vim.api.nvim_create_user_command("Transparent", function() Transparent() end, { nargs = 0 })
 

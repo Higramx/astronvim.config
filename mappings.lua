@@ -61,6 +61,11 @@ Maps = {
         ["<C-j>"] = { function() require("smart-splits").resize_down() end, desc = "Resize split down" },
         ["<C-h>"] = { function() require("smart-splits").resize_left() end, desc = "Resize split left" },
         ["<C-l>"] = { function() require("smart-splits").resize_right() end, desc = "Resize split right" },
+        ["<leader>ss"] = { '<cmd>lua require("spectre").open()<CR>', desc = "Open Spectre" },
+        ["<leader>sw"] = { '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', desc =
+        "Search current word" },
+        ["<leader>sp"] = { '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', desc =
+        "Search in current file" },
     },
     i = {
         -- ["C-z"] = { "<C-O>u" },
@@ -74,6 +79,7 @@ Maps = {
         ["<leader>P"] = { '"_dP' },
         ["J"] = { ":m '>+1<CR>gv=gv" },
         ["K"] = { ":m '<-2<CR>gv=gv" },
+        ["<leader>sw"] = { '<esc><cmd>lua require("spectre").open_visual()<CR>', desc = "Search current word" },
     },
     x = {
         ["<leader>P"] = { '"_dP' },
